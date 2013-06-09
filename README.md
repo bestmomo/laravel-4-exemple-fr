@@ -25,11 +25,11 @@ Aucun package n'a été utilisé pour montrer les possiblités intrinsèques du 
 
 ##Installation
 
-* Installation classique de Laravel 4
-* Créer une base de données et renseigner le fichier app/config/database.php
-* "php artisan migrate" pour créer les tables
-* "php artisan db:seed" pour ajouter des enregistrements
-* Renseigner le fichier app/config/mail.php pour l'envoi des E-mails
+1. Installation classique de Laravel 4
+2. Créer une base de données et renseigner le fichier *app/config/database.php*
+3. **php artisan migrate** pour créer les tables
+4. **php artisan db:seed** pour ajouter des enregistrements
+5. Renseigner le fichier *app/config/mail.php* pour l'envoi des E-mails
 
 ## License
 
