@@ -6,7 +6,7 @@
 
 ### Statut de cet exemple
 
-**En cours de développement**
+La version est stable.
 
 Aucun package n'a été utilisé pour montrer les possiblités intrinsèques du framework.
 
