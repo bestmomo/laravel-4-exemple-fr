@@ -1,13 +1,13 @@
-## Laravel 4.x
+## Exemple Français pour Laravel 4.x
 
-### A Framework For Web Artisans
+### Informations en français sur le framawork
 
-[Official Documentation](http://four.laravel.com) (Under Active Development)
+[Official Documentation](http://laravel.fr) 
 
-### Contributing To Laravel
+### Statut de cet exemple
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+**En cours de développement**
 
 ### License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+[MIT license](http://opensource.org/licenses/MIT)
