@@ -1,6 +1,6 @@
 ## Exemple Français pour Laravel 4.x
 
-### Informations en français sur le framawork
+### Informations en français sur le framework
 
 [Documentation en français](http://laravel.fr) 
 
