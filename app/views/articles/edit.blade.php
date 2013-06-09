@@ -14,6 +14,7 @@
 					<a href="javascript:history.back()" class="btn btn-medium btn-info"><i class="icon-backward icon-white"></i> Annuler</a>
 				</div>
 			</h3>
+			<h4><i>{{ $section_titre . ' -> ' . $categorie_titre }}</i></h4>
 		</div>
 
 	    {{ Form::open(array('url' => 'articles/'.$article->id, 'method' => 'put')) }}

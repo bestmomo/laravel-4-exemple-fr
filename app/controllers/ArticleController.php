@@ -73,12 +73,20 @@ class ArticleController extends BaseController {
         // Sections
         $sections = Section::all();
 
+        // Catégorie
+        $categorie = Categorie::find($categorie_id);
+
+        // Section de cette catégorie
+        $section = $categorie->section;
+
         // Vue
         $cible = User::admin() ? 'backend' : 'frontend';
 
         return View::make($cible . '.articles.create', array(
             'sections' => $sections,
-            'categorie_id' => $categorie_id
+            'categorie_id' => $categorie_id,
+            'categorie_titre' => $categorie->titre,
+            'section_titre' => $section->titre
         ));
     }
 
@@ -147,7 +155,7 @@ class ArticleController extends BaseController {
     }
 
     /**
-     * Affiche le formulaire mour la modification d'un article
+     * Affiche le formulaire pour la modification d'un article
      *
      * @param  int  $id
      * @return Response
@@ -164,12 +172,20 @@ class ArticleController extends BaseController {
             return Redirect::route('articles.index');
         }
 
+        // Catégorie de cet article
+        $categorie = $article->categorie;
+
+        // Section de cette catégorie
+        $section = $categorie->section;
+
         // Vue
         $cible = User::admin() ? 'backend' : 'frontend';
 
         return View::make($cible . '.articles.edit', array(
             'sections' => $sections,
-            'article' => $article
+            'article' => $article,
+            'categorie_titre' => $categorie->titre,
+            'section_titre' => $section->titre
         ));
     }
 
