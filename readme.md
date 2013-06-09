@@ -2,7 +2,7 @@
 
 ### Informations en français sur le framawork
 
-[Official Documentation](http://laravel.fr) 
+[Documentation en français](http://laravel.fr) 
 
 ### Statut de cet exemple
 
