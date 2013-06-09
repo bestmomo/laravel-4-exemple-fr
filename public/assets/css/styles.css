@@ -1,0 +1,110 @@
+/* Barre de navigation */
+#nav {
+    background-image: linear-gradient(to bottom, #ccc, #eee);
+}
+#nav ul li a:hover {
+    color: #855;
+    padding-top: 15px;
+    transition: all .5s;
+}
+#nav ul li.active a:hover {
+    padding-top: 10px;
+}
+
+/* Menu */
+#menu {
+    padding: 0;
+}
+#menu li a {
+    color: #777;
+}
+#menu li a:hover {
+    color: #855;
+    padding-left: 20px;     
+    transition: all .5s;
+}
+#menu li.active a:hover {
+    padding-left: 12px;     
+}
+#menu li a {
+    transition: all .5s;
+}
+
+/* Module */
+.module {
+    padding-bottom: 10px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 10px #ccc;
+    margin-bottom: 10px;
+}
+.module header {
+    background-image: linear-gradient(to bottom, #ccc, #eee);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.module header h3 {
+    margin: 0;
+}
+
+
+/* Divers */
+body {
+    font-family: 'Andada', serif;
+}
+footer {
+    text-align: center;
+}
+.well {
+    box-shadow: 0 0 10px #ccc;  
+}
+img {
+    width: 100%;
+}
+header {
+    margin-bottom: 10px;
+}
+p {
+    margin: 0 20px 0;
+}
+a:focus {
+    outline: 0;
+} 
+td form {
+    margin: 0;
+}
+.table th, .table td.center {
+    text-align: center;
+}
+form .navbar-search {
+    float : right;
+}
+
+/* Mise en forme navigation sur "grands" écrans */
+@media (min-width: 980px)
+{
+    #nav {
+        height: 60px;
+    }
+    #nav a, #nav p {
+        margin-top: 5px;
+        transition: all .5s;
+    }
+    #nav a i {
+        display: block; 
+        font-size: 20px;
+        margin: 0 auto;
+    }
+    .navbar .divider-vertical {
+        height: 60px;
+        margin: 0;
+        border-left: 1px solid #ddd;
+    }
+    .nav-stacked > li.active > a {
+        margin-left: 5px;
+    }
+    #nav li.active, #menu li.active {
+        background-color: #884;
+    }
+}
+
+
