@@ -43,18 +43,14 @@ class SectionController extends BaseController {
      */
     public function store()
     {
-        $input = Input::all();
+        $section = new Section(Input::all());
 
-        $validation = Validator::make($input, Section::$rules_create);
-
-        if ($validation->passes())
+        if($section->save())
         {
-            $this->section->create($input);
-
             return Redirect::route('sections.index');
         }
 
-        return Redirect::back()->withInput()->withErrors($validation);
+        return Redirect::back()->withInput()->withErrors($section->errors);
     }
 
     /**
@@ -83,19 +79,18 @@ class SectionController extends BaseController {
      */
     public function update($id)
     {
+
+        $section = $this->section->find($id);
+
         $input = array_except(Input::all(), '_method');
 
-        $validation = Validator::make($input, Section::$rules_edit);
-
-        if ($validation->passes())
+        if($section->update($input))
         {
-            $section = $this->section->find($id);
-            $section->update($input);
-
             return Redirect::route('sections.index');
         }
 
-        return Redirect::back()->withInput()->withErrors($validation);
+        return Redirect::back()->withInput()->withErrors($section->errors);
+        
     }
 
     /**

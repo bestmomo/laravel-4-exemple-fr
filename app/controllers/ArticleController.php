@@ -97,17 +97,14 @@ class ArticleController extends BaseController {
      */
     public function store()
     {
-        $input = Input::all();
-        $validation = Validator::make($input, Article::$rules);
+        $article = new Article(Input::all());
 
-        if ($validation->passes())
+        if($article->save())
         {
-            $this->article->create($input);
-
             return Redirect::route('articles.show', array(Input::get('categorie_id')));
         }
 
-        return Redirect::back()->withInput()->withErrors($validation);
+        return Redirect::back()->withInput()->withErrors($article->errors);
     }
 
     /**
@@ -197,18 +194,16 @@ class ArticleController extends BaseController {
      */
     public function update($id)
     {
+        $article = $this->article->find($id);
+
         $input = array_except(Input::all(), '_method');
-        $validation = Validator::make($input, Article::$rules);
 
-        if ($validation->passes())
+        if($article->update($input))
         {
-            $article = $this->article->find($id);
-            $article->update($input);
-
             return Redirect::to('articles/'.$article->categorie_id);
         }
 
-        return Redirect::back()->withInput()->withErrors($validation);
+        return Redirect::back()->withInput()->withErrors($article->errors);
     }
 
     /**

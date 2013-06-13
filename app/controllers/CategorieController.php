@@ -62,17 +62,14 @@ class CategorieController extends BaseController {
      */
     public function store()
     {
-        $input = Input::all();
-        $validation = Validator::make($input, Categorie::$rules);
+        $categorie = new Categorie(Input::all());
 
-        if ($validation->passes())
+        if($categorie->save())
         {
-            $this->categorie->create($input);
-
             return Redirect::route('categories.show', array(Input::get('section_id')));
         }
 
-        return Redirect::back()->withInput()->withErrors($validation);
+        return Redirect::back()->withInput()->withErrors($categorie->errors);
     }
 
     /**
@@ -122,18 +119,16 @@ class CategorieController extends BaseController {
      */
     public function update($id)
     {
+        $categorie = $this->categorie->find($id);
+
         $input = array_except(Input::all(), '_method');
-        $validation = Validator::make($input, Categorie::$rules);
 
-        if ($validation->passes())
+        if($categorie->update($input))
         {
-            $categorie = $this->categorie->find($id);
-            $categorie->update($input);
-
             return Redirect::to('categories/'.$categorie->section_id);
         }
 
-        return Redirect::back()->withInput()->withErrors($validation);
+        return Redirect::back()->withInput()->withErrors($categorie->errors);
     }
 
     /**

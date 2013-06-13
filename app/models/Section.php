@@ -1,6 +1,6 @@
 <?php
 
-class Section extends Eloquent {
+class Section extends BaseModel {
 
 	protected $guarded = array();
 
@@ -9,13 +9,8 @@ class Section extends Eloquent {
 		return $this->hasMany('Categorie');
 	}
 
-    public static $rules_create = array(
-        'titre' => 'required|max:255|unique:sections',
-        'description' => 'required'
-    );
-
-    public static $rules_edit = array(
-        'titre' => 'required|max:255',
+    protected static $rules = array(
+        'titre' => 'required|max:255|unique:sections,titre',
         'description' => 'required'
     );
 

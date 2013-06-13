@@ -64,23 +64,19 @@ class AuthController extends BaseController {
 	 */
 	public function postInscription()
 	{
-		// Validation
-		$v = Validator::make(Input::all(), User::$rules, User::$messages);
-
-		// Si échec de la validation
-		if ($v->fails())
-		{
-			return Redirect::to('auth/login/create')->withErrors($v)->withInput(Input::only('username', 'email', 'email_confirmation'));
-		}
-
-		// Enregistrement de l'utilisateur
-        $user = new User;
+		$user = new User;
         $user->username = Input::get('username');
         $user->email = Input::get('email');
         $user->password = Hash::make(Input::get('password'));
-        $user->save(); 
 
-		return Redirect::home()->with('flash_success', 'Votre compte a été créé.');
+        if($user->save())
+        {
+            return Redirect::home()->with('flash_success', 'Votre compte a été créé.');
+        }
+
+        return Redirect::to('auth/login/create')
+        		->withErrors($user->errors)
+        		->withInput(Input::only('username', 'email', 'email_confirmation'));
 	}
 
 	/**

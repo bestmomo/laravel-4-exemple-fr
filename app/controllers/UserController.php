@@ -52,20 +52,18 @@ class UserController extends BaseController {
      */
     public function update($id)
     {
+        $user = $this->user->find($id);
+
         $input = array_except(Input::all(), '_method');
-        $validation = Validator::make($input, User::$rules_edit);
 
-        if ($validation->passes())
+        User::$rules_s = User::$rules_edit;
+
+        if($user->update($input))
         {
-            $user = $this->user->find($id);
-            $user->update($input);
-
             return Redirect::route('users.index');
         }
 
-        return Redirect::route('users.edit', $id)
-            ->withInput()
-            ->withErrors($validation);
+        return Redirect::route('users.edit', $id)->withInput()->withErrors($user->errors);
     }
 
     /**

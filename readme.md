@@ -1,13 +1,36 @@
-## Laravel 4.x
+## Exemple Français pour Laravel 4
 
-### A Framework For Web Artisans
+### Informations en Français sur le framework
 
-[Official Documentation](http://four.laravel.com) (Under Active Development)
+[Documentation en français](http://laravel.fr) 
 
-### Contributing To Laravel
+### Statut de cet exemple
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+La version est stable.
 
-### License
+Aucun package n'a été utilisé pour montrer les possiblités intrinsèques du framework.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+##Inclus
+
+* Twitter Bootstrap pour la mise en forme des pages (design responsive)
+* JQuery pour le bon fonctionnement de Bootstrap
+* cKEditor pour l'édition des articles
+* FileManager pour la gestion des médias
+* Fichiers de traduction laravel (https://github.com/laravel-france/laravel-lang-fr)
+* Pages d'erreur : 403, 404, 500 et 503
+* Back-end : Gestion des utilisateurs, des sections, des catégories et des articles
+* 3 rôles : administrateur, rédacteur (ne peut que rédiger des articles et modifier ses articles), utilisateur de base
+* Front-end : Navigation dans les sections, catégories et articles, connexion , inscription, renouvellement du mot de passe de l'utilisateur
+* Pages du site : accueil, à propos et contactez-nous
+
+##Installation
+
+1. Installation classique de Laravel 4
+2. Créer une base de données et renseigner le fichier *app/config/database.php*
+3. **php artisan migrate** pour créer les tables
+4. **php artisan db:seed** pour ajouter des enregistrements
+5. Renseigner le fichier *app/config/mail.php* pour l'envoi des E-mails
+
+## License
+
+[MIT license](http://opensource.org/licenses/MIT)

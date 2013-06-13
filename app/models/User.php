@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends BaseModel implements UserInterface, RemindableInterface {
 
 	protected $guarded = array();
 
@@ -45,7 +45,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
     public static $rules = array(
-        'username' => 'required|alpha|between:6,64|unique:users',
+        'username' => 'required|alpha|between:6,64|unique:users,username',
         'email' => 'required|email|unique:users|confirmed',
         'password' => 'required|alpha_num|between:6,20|confirmed'
     );
