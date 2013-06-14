@@ -11,6 +11,8 @@ class ArticleController extends BaseController {
 
     public function __construct(Article $article)
     {
+        parent::__construct();
+        
         $this->article = $article;
     }
 

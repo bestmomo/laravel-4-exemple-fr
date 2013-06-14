@@ -4,6 +4,8 @@ class AuthController extends BaseController {
 
 	public function __construct()
 	{
+		parent::__construct();
+		
 		// Filtres
 		$this->beforeFilter('guest', array('only' => array('getLogin')));
 		$this->beforeFilter('auth', array('only' => array('getLogout')));

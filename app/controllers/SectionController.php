@@ -11,6 +11,8 @@ class SectionController extends BaseController {
 
     public function __construct(Section $section)
     {
+        parent::__construct();
+        
         $this->section = $section;
     }
 

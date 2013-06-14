@@ -11,6 +11,8 @@ class CategorieController extends BaseController {
 
     public function __construct(Categorie $categorie)
     {
+        parent::__construct();
+        
         $this->categorie = $categorie;
     }
 
