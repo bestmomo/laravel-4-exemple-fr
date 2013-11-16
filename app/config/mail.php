@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'colorstonic@free.fr', 'name' => 'admin'),
+	'from' => array('address' => 'moi@free.fr', 'name' => 'admin'),
 
 	/*
 	|--------------------------------------------------------------------------
